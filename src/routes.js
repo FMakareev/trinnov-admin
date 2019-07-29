@@ -29,7 +29,8 @@ export default [
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/dashboard" />
+    // component: () => <Redirect to="/dashboard" />
+    component: () => <Redirect to="/news" />
   },
   {
     path: "/dashboard",
@@ -67,11 +68,6 @@ export default [
     component: BlogPosts
   },
   // My panel
-  {
-    path: "/news",
-    layout: DefaultLayout,
-    component: News
-  },
   {
     path: "/products",
     layout: DefaultLayout,
@@ -116,5 +112,10 @@ export default [
     path: "/users",
     layout: DefaultLayout,
     component: Users
+  },
+  {
+    path: "/news",
+    layout: DefaultLayout,
+    component: News
   }
 ];
