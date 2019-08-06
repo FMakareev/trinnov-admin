@@ -13,6 +13,8 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import { Link } from 'react-router-dom';
+
 
 class News extends React.Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class News extends React.Component {
       // First list of posts.
       PostsListOne: [
         {
-          backgroundImage: require("../images/content-management/1.jpeg"),
+          backgroundImage: require("../images/content-management/news-1.jpg"),
           category: "Business",
           categoryTheme: "dark",
           author: "Anna Kunis",
@@ -33,7 +35,7 @@ class News extends React.Component {
           date: "28 February 2019"
         },
         {
-          backgroundImage: require("../images/content-management/2.jpeg"),
+          backgroundImage: require("../images/content-management/news-1.jpg"),
           category: "Travel",
           categoryTheme: "info",
           author: "James Jamerson",
@@ -125,7 +127,7 @@ class News extends React.Component {
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="News Posts" subtitle="List of news posts to edit" className="text-sm-left" />
           <div className="ml-auto">
-          <Button className="ml-sm-auto mb-2 " theme="primary">Add article +</Button>
+          <Link to={'/news-editor'}><Button className="ml-sm-auto mb-2 " theme="primary">Add article +</Button></Link>
           </div>
         </Row>
 
@@ -162,6 +164,13 @@ class News extends React.Component {
                   </h5>
                   <p className="card-text d-inline-block mb-3">{post.body}</p>
                   <span className="text-muted">{post.date}</span>
+                    <a
+                      href="#"
+                      className="card-post__author-avatar card-post__author-avatar--small"
+                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
+                    >
+                      Written by {post.author}
+                    </a>
                 </CardBody>
               </Card>
             </Col>

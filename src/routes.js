@@ -23,6 +23,7 @@ import PagesList from "./views/PagesList";
 import TeamMembers from "./views/TeamMembers";
 import Jobs from "./views/Jobs";
 import Users from "./views/Users";
+import NewsEditor from "./views/NewsEditor";
 
 export default [
   {
@@ -117,5 +118,10 @@ export default [
     path: "/news",
     layout: DefaultLayout,
     component: News
-  }
+  },
+  {
+    path: "/news-editor",
+    layout: DefaultLayout,
+    component: NewsEditor
+  },
 ];
