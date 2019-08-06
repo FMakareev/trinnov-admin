@@ -164,13 +164,7 @@ class News extends React.Component {
                   </h5>
                   <p className="card-text d-inline-block mb-3">{post.body}</p>
                   <span className="text-muted">{post.date}</span>
-                    <a
-                      href="#"
-                      className="card-post__author-avatar card-post__author-avatar--small"
-                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
-                    >
-                      Written by {post.author}
-                    </a>
+                    
                 </CardBody>
               </Card>
             </Col>
