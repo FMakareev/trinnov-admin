@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
+    "babel-plugin-transform-react-statements": "^0.7.3",
     "brickyeditor": "^0.8.4",
     "camelize": "^1.0.0",
     "chart.js": "^2.7.3",

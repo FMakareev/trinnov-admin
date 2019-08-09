@@ -24,7 +24,7 @@ class News extends React.Component {
       // First list of posts.
       PostsListOne: [
         {
-          backgroundImage: require("../images/content-management/news-1.jpg"),
+          backgroundImage: require("../images/content-management/news-2.jpg"),
           category: "Business",
           categoryTheme: "dark",
           author: "Anna Kunis",
@@ -32,7 +32,13 @@ class News extends React.Component {
           title: "Conduct at an replied removal an amongst",
           body:
             "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
-          date: "28 February 2019"
+          date: "28 February 2019",
+          tags: 
+          [
+            {tag_name: "tag one"},
+            {tag_name: "tag two"},
+            {tag_name: "tag three"}
+          ]
         },
         {
           backgroundImage: require("../images/content-management/news-1.jpg"),
@@ -43,10 +49,25 @@ class News extends React.Component {
           title: "Off tears are day blind smile alone had ready",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
         },
         {
-          backgroundImage: require("../images/content-management/3.jpeg"),
+          backgroundImage: require("../images/content-management/news-2.jpg"),
           category: "Technology",
           categoryTheme: "royal-blue",
           author: "Jimmy Jackson",
@@ -54,10 +75,25 @@ class News extends React.Component {
           title: "Difficult in delivered extensive at direction",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
         },
         {
-          backgroundImage: require("../images/content-management/4.jpeg"),
+          backgroundImage: require("../images/content-management/news-1.jpg"),
           category: "Business",
           categoryTheme: "warning",
           author: "John James",
@@ -65,10 +101,25 @@ class News extends React.Component {
           title: "It so numerous if he may outlived disposal",
           body:
             "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
         },
         {
-            backgroundImage: require("../images/content-management/1.jpeg"),
+            backgroundImage: require("../images/content-management/news-1.jpg"),
             category: "Business",
             categoryTheme: "dark",
             author: "Anna Kunis",
@@ -76,10 +127,25 @@ class News extends React.Component {
             title: "Conduct at an replied removal an amongst",
             body:
               "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
-            date: "28 February 2019"
+            date: "28 February 2019",
+           tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
           },
           {
-            backgroundImage: require("../images/content-management/2.jpeg"),
+            backgroundImage: require("../images/content-management/news-2.jpg"),
             category: "Travel",
             categoryTheme: "info",
             author: "James Jamerson",
@@ -87,10 +153,16 @@ class News extends React.Component {
             title: "Off tears are day blind smile alone had ready",
             body:
               "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+            tags: 
+          [
+            {tag_name: "tag one"},
+            {tag_name: "tag two"},
+            {tag_name: "tag three"}
+          ]
           },
           {
-            backgroundImage: require("../images/content-management/3.jpeg"),
+            backgroundImage: require("../images/content-management/news-1.jpg"),
             category: "Technology",
             categoryTheme: "royal-blue",
             author: "Jimmy Jackson",
@@ -98,10 +170,25 @@ class News extends React.Component {
             title: "Difficult in delivered extensive at direction",
             body:
               "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+            tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
           },
           {
-            backgroundImage: require("../images/content-management/4.jpeg"),
+            backgroundImage: require("../images/content-management/news-2.jpg"),
             category: "Business",
             categoryTheme: "warning",
             author: "John James",
@@ -109,7 +196,22 @@ class News extends React.Component {
             title: "It so numerous if he may outlived disposal",
             body:
               "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+            tags: 
+          [
+            {
+              id: "1",
+              tag_name: "tag one"
+            },
+            {
+              id: "2",
+              tag_name: "tag two"
+            },
+            {
+              id: "3",
+              tag_name: "tag three"
+            }
+          ]
           }
       ]
     };
@@ -136,26 +238,7 @@ class News extends React.Component {
           {PostsListOne.map((post, idx) => (
             <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
               <Card small className="card-post card-post--1">
-                <div
-                  className="card-post__image"
-                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
-                >
-                  <Badge
-                    pill
-                    className={`card-post__category bg-${post.categoryTheme}`}
-                  >
-                    {post.category}
-                  </Badge>
-                  <div className="card-post__author d-flex">
-                    <a
-                      href="#"
-                      className="card-post__author-avatar card-post__author-avatar--small"
-                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
-                    >
-                      Written by {post.author}
-                    </a>
-                  </div>
-                </div>
+                  <img src={post.backgroundImage} width="100%" height="auto"></img>
                 <CardBody>
                   <h5 className="card-title">
                     <a href="#" className="text-fiord-blue">
@@ -163,8 +246,15 @@ class News extends React.Component {
                     </a>
                   </h5>
                   <p className="card-text d-inline-block mb-3">{post.body}</p>
-                  <span className="text-muted">{post.date}</span>
-                    
+                  <span className="text-muted">{post.date}</span><br />
+                  <a href="#"><img src={post.authorAvatar} width="20px" height="auto"></img> {post.author}</a>
+                  
+                  <Row noGutters className="pt-4"> 
+                    <a href="#"><Badge pill className="bg-dark mr-2">HiFi</Badge></a>
+                    <a href="#"><Badge pill className="bg-dark mr-2">Home Cinema</Badge></a>
+                    <a href="#"><Badge pill className="bg-dark mr-2">Interview</Badge></a>
+                    <a href="#"><Badge pill className="bg-dark mr-2">Special Event</Badge></a>
+                  </Row> 
                 </CardBody>
               </Card>
             </Col>

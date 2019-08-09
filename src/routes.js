@@ -24,6 +24,7 @@ import TeamMembers from "./views/TeamMembers";
 import Jobs from "./views/Jobs";
 import Users from "./views/Users";
 import NewsEditor from "./views/NewsEditor";
+import ProductEditor from "./views/ProductEditor";
 
 export default [
   {
@@ -124,4 +125,9 @@ export default [
     layout: DefaultLayout,
     component: NewsEditor
   },
+  {
+    path: "/product-editor",
+    layout: DefaultLayout,
+    component: ProductEditor
+  }
 ];
