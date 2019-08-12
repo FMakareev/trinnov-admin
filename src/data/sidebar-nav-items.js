@@ -25,6 +25,12 @@ export default function() {
       htmlAfter: ""
     },
     {
+      title: "Categories",
+      to: "/categories",
+      htmlBefore: '<i class="material-icons">category</i>',
+      htmlAfter: ""
+    },
+    {
       title: "Files",
       to: "/files",
       htmlBefore: '<i class="material-icons">archive</i>',

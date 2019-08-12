@@ -95,7 +95,7 @@ class Products extends React.Component {
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="Trinnov products" subtitle="Edit markets and products" className="text-sm-left" />
           <div className="ml-auto">
-          <Button outline size="sm" theme="primary" className="mb-2 mr-1">Add category +</Button>  
+          <Link to={'/product-category-editor'}><Button outline size="sm" theme="primary" className="mb-2 mr-1">Add category +</Button></Link>
           <Link to={'/product-editor'}><Button className="ml-sm-auto mb-2 " theme="primary">Add product +</Button></Link>
           </div>
         </Row>
@@ -103,7 +103,7 @@ class Products extends React.Component {
         {/* First Row of Posts */}
         <Row noGutters className="d-flex my-4">
             <h3 className="text-sm-left mr-2" sm="4">HiFi</h3> 
-            <Button outline size="sm" theme="primary" className="mb-2 mr-1 ">Edit category</Button> 
+            <Link to={'/product-category-editor'}><Button outline size="sm" theme="primary" className="mb-2 mr-1 ">Edit category</Button></Link>
             <img src={require("../images/content-management/logo-hor-hifi.png")} height="30px" className="mt-2 ml-auto"></img>
         </Row>
         <Row>
@@ -133,7 +133,7 @@ class Products extends React.Component {
         {/* Second Row of Posts */}
         <Row noGutters className="d-flex my-4">
             <h3 className="text-sm-left mr-2" sm="4">Home Cinema</h3> 
-            <Button outline size="sm" theme="primary" className="mb-2 mr-1 ">Edit category</Button> 
+            <Link to={'/product-category-editor'}><Button outline size="sm" theme="primary" className="mb-2 mr-1 ">Edit category</Button></Link>
             <img src={require("../images/content-management/logo-hor-cinema.png")} height="30px" className="mt-2 ml-auto"></img>
         </Row>
         <Row>

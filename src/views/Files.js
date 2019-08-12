@@ -15,6 +15,7 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import { Link } from 'react-router-dom';
 
 class Files extends React.Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class Files extends React.Component {
                         <thead className="bg-light">
                             <tr>
                             <th scope="col" className="border-0">
-                                Icon
+                                File type
                             </th>
                             <th scope="col" className="border-0">
                                 Name
@@ -92,7 +93,7 @@ class Files extends React.Component {
                             <td>
                                 <ButtonGroup className="mb-3 float-right">
                                     <Button outline theme="danger">Delete</Button>
-                                    <Button outline theme="primary">Edit</Button>                                    
+                                    <Link to={'/file-editor'}><Button outline theme="primary">Edit</Button></Link>                                   
                                 </ButtonGroup> 
                             </td>
                             </tr>))}
@@ -100,7 +101,7 @@ class Files extends React.Component {
                         </table>
                     </CardBody>
                     <CardFooter>
-                        <Button className="btn-block">+ Add File</Button>
+                    <Link to={'/file-editor'}><Button className="btn-block">+ Add File</Button></Link>
                     </CardFooter>
                 </Card>
             </Col>
@@ -114,7 +115,7 @@ class Files extends React.Component {
                         <thead className="bg-light">
                             <tr>
                             <th scope="col" className="border-0">
-                                Icon
+                            File type
                             </th>
                             <th scope="col" className="border-0">
                                 Name
@@ -136,7 +137,7 @@ class Files extends React.Component {
                             <td>
                                 <ButtonGroup className="mb-3 float-right">
                                     <Button outline theme="danger">Delete</Button>
-                                    <Button outline theme="primary">Edit</Button>                                    
+                                    <Link to={'/file-editor'}><Button outline theme="primary">Edit</Button></Link>                                   
                                 </ButtonGroup> 
                             </td>
                             </tr>))}
@@ -144,7 +145,7 @@ class Files extends React.Component {
                         </table>
                     </CardBody>
                     <CardFooter>
-                        <Button className="btn-block">+ Add File</Button>
+                    <Link to={'/file-editor'}><Button className="btn-block">+ Add File</Button></Link>
                     </CardFooter>
                 </Card>
             </Col>
@@ -158,7 +159,7 @@ class Files extends React.Component {
                         <thead className="bg-light">
                             <tr>
                             <th scope="col" className="border-0">
-                                Icon
+                            File type
                             </th>
                             <th scope="col" className="border-0">
                                 Name
@@ -180,7 +181,7 @@ class Files extends React.Component {
                             <td>
                                 <ButtonGroup className="mb-3 float-right">
                                     <Button outline theme="danger">Delete</Button>
-                                    <Button outline theme="primary">Edit</Button>                                    
+                                    <Link to={'/file-editor'}><Button outline theme="primary">Edit</Button></Link>
                                 </ButtonGroup> 
                             </td>
                             </tr>))}
@@ -188,7 +189,7 @@ class Files extends React.Component {
                         </table>
                     </CardBody>
                     <CardFooter>
-                        <Button className="btn-block">+ Add File</Button>
+                    <Link to={'/file-editor'}><Button className="btn-block">+ Add File</Button></Link>
                     </CardFooter>
                 </Card>
             </Col>
@@ -211,7 +212,7 @@ class Files extends React.Component {
                         <thead className="bg-light">
                             <tr>
                             <th scope="col" className="border-0">
-                                Icon
+                            File type
                             </th>
                             <th scope="col" className="border-0">
                                 Name
@@ -233,7 +234,7 @@ class Files extends React.Component {
                             <td>
                                 <ButtonGroup className="mb-3 float-right">
                                     <Button outline theme="danger">Delete</Button>
-                                    <Button outline theme="primary">Edit</Button>                                    
+                                    <Link to={'/file-editor'}><Button outline theme="primary">Edit</Button></Link>                                    
                                 </ButtonGroup> 
                             </td>
                             </tr>))}
@@ -241,7 +242,7 @@ class Files extends React.Component {
                         </table>
                     </CardBody>
                     <CardFooter>
-                        <Button className="btn-block">+ Add File</Button>
+                    <Link to={'/file-editor'}><Button className="btn-block">+ Add File</Button></Link>
                     </CardFooter>
                 </Card>
             </Col>

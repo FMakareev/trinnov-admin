@@ -25,6 +25,14 @@ import Jobs from "./views/Jobs";
 import Users from "./views/Users";
 import NewsEditor from "./views/NewsEditor";
 import ProductEditor from "./views/ProductEditor";
+import TrainingEditor from "./views/TrainingEditor";
+import FileEditor from "./views/FileEditor";
+import { join } from "path";
+import JobsEditor from "./views/JobsEditor";
+import TeamMembersEditor from "./views/TeamMembersEditor";
+import Categories from "./views/Categories";
+import ProductCategoryEditor from "./views/ProductCategoryEditor";
+import UsersEditor from "./views/UsersEditor";
 
 export default [
   {
@@ -129,5 +137,40 @@ export default [
     path: "/product-editor",
     layout: DefaultLayout,
     component: ProductEditor
+  },
+  {
+    path: "/training-editor",
+    layout: DefaultLayout,
+    component: TrainingEditor
+  },
+  {
+    path: "/file-editor",
+    layout: DefaultLayout,
+    component: FileEditor
+  },
+  {
+    path: "/jobs-editor",
+    layout: DefaultLayout,
+    component: JobsEditor
+  },
+  {
+    path: "/team-editor",
+    layout: DefaultLayout,
+    component: TeamMembersEditor
+  },
+  {
+    path: "/categories",
+    layout: DefaultLayout,
+    component: Categories
+  },
+  {
+    path: "/product-category-editor",
+    layout: DefaultLayout,
+    component: ProductCategoryEditor
+  },
+  {
+    path: "/users-editor",
+    layout: DefaultLayout,
+    component: UsersEditor    
   }
 ];

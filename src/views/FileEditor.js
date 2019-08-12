@@ -43,7 +43,7 @@ import AwardEditor from "../components/editor-components/AwardEditor";
 import PressEditor from "../components/editor-components/PressEditor";
 
 
-class ProductEditor extends React.Component {
+class FileEditor extends React.Component {
   constructor(props) {
     super(props);
 
@@ -59,52 +59,10 @@ class ProductEditor extends React.Component {
 
     return (
     <Container fluid className="main-content-container px-4"> 
-      {/* Page Header */}
-      <Row noGutters className="page-header py-4">
-          <PageTitle sm="4" title="Product editor" subtitle="Drag and drop interface" className="text-sm-left" />
-          <div className="ml-auto">
-          <Button outline theme="accent" size="sm" className="mr-2">
-            <i className="material-icons">save</i> Save Draft
-          </Button>
-          <Button theme="accent" size="sm" className="ml-auto">
-            <i className="material-icons">file_copy</i> Publish
-          </Button>
-          </div>
+    <Row noGutters className="page-header py-4">
+          <PageTitle sm="4" title="%Product_name% files" subtitle="Add and delete product files" className="text-sm-left" />
       </Row>
-      <Row className="mb-4">
-        <Col lg="9">
-          <Card small className="mb-4">
-            <CardHeader className="border-bottom">
-                <h6 className="m-0">Product header</h6>
-            </CardHeader>
-            <CardBody>
-            <FormInput size="lg" className="mb-3" placeholder="Your Product Title" />
-            <FormInput placeholder="Subtitle" className="mb-4"></FormInput> 
-              <Row>
-                <Col md="12">
-                    <Row >
-                    <Col md="6"><FormInput placeholder="Date" className="mb-2"></FormInput> </Col>
-                    <Col md="6"><FormInput placeholder="Slug" className="mb-2"></FormInput> </Col>
-                    </Row>
-                </Col>
-              </Row>
-            </CardBody>
-          </Card>
-          <Card small className="mb-4">
-            <CardHeader className="border-bottom mb-4"><h6 className="m-0">Main image gallery</h6></CardHeader>
-            <CardBody>
-              <Row>
-              <Col md="3"><div className="border rounded p-2"><img width="100%" height="auto" src={require("../images/content-management/10.jpeg")} className="pb-2"></img></div></Col>
-              <Col md="3"><div className="border rounded p-2"><img width="100%" height="auto" src={require("../images/content-management/9.jpeg")} className="pb-2"></img></div></Col>
-              <Col md="3" ><div className=""><i className="material-icons w-100 text-center" style={{fontSize: 124}}>add_photo_alternate</i> <CustomFileUpload /></div></Col>
-              </Row>
-            </CardBody>
-          </Card>
-          <ProductOverviewEditor />
-          <SpecificationsEditor />
-          <AwardEditor />
-          <PressEditor />
-          <Card smallclassName="mb-4">
+       <Card smallclassName="mb-4">
             <CardHeader className="border-bottom">
                 <h6 className="m-0">Downloads</h6>
             </CardHeader>
@@ -224,16 +182,9 @@ class ProductEditor extends React.Component {
             <Row><Button outline className="mb-4 btn-block"><i className="material-icons">create_new_folder</i>  Add folder</Button></Row>
             </CardBody>
           </Card>
-        </Col>
-        <Col lg="3">
-          <OpenGraph />
-          <CardDetails />
-          <SidebarCategories />
-        </Col>
-      </Row>
     </Container>
     );
   }
 }
 
-export default ProductEditor;
+export default FileEditor;

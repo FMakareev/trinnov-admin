@@ -15,6 +15,7 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import { Link } from "react-router-dom";
 
 
 class Users extends React.Component {
@@ -62,7 +63,7 @@ class Users extends React.Component {
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="Users" subtitle="List of administrators and moderators" className="text-sm-left" />
-          <Button className="ml-sm-auto mb-2 " theme="primary">Add user +</Button>
+          <Link className="ml-sm-auto " to={'/users-editor'}><Button className="mb-2 " theme="primary">Add user +</Button></Link>
         </Row>
         <Row>
             <Col sm="12" className="mb-4">
@@ -98,7 +99,7 @@ class Users extends React.Component {
                             <td>
                                 <ButtonGroup className="mb-3 float-right">
                                     <Button outline theme="danger">Delete</Button>
-                                    <Button outline theme="primary">Edit</Button>                                    
+                                    <Link to={'/users-editor'} className="ml-2"><Button outline theme="primary">Edit</Button></Link>                               
                                 </ButtonGroup> 
                             </td>
                             </tr>))}

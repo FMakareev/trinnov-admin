@@ -13,6 +13,7 @@ import {
 } from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
+import { Link } from 'react-router-dom';
 
 class Trainings extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Trainings extends React.Component {
       // First list of posts.
       PostsListOne: [
         {
-          backgroundImage: require("../images/content-management/1.jpeg"),
+          backgroundImage: require("../images/content-management/news-1.jpg"),
           category: "Business",
           categoryTheme: "dark",
           author: "Anna Kunis",
@@ -30,10 +31,11 @@ class Trainings extends React.Component {
           title: "Conduct at an replied removal an amongst",
           body:
             "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
-          date: "28 February 2019"
+          date: "28 February 2019",
+          eventDate: "28 Feb"
         },
         {
-          backgroundImage: require("../images/content-management/2.jpeg"),
+          backgroundImage: require("../images/content-management/news-2.jpg"),
           category: "Travel",
           categoryTheme: "info",
           author: "James Jamerson",
@@ -41,10 +43,11 @@ class Trainings extends React.Component {
           title: "Off tears are day blind smile alone had ready",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          eventDate: "28 Feb"
         },
         {
-          backgroundImage: require("../images/content-management/3.jpeg"),
+          backgroundImage: require("../images/content-management/news-1.jpg"),
           category: "Technology",
           categoryTheme: "royal-blue",
           author: "Jimmy Jackson",
@@ -52,10 +55,11 @@ class Trainings extends React.Component {
           title: "Difficult in delivered extensive at direction",
           body:
             "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          eventDate: "28 Feb"
         },
         {
-          backgroundImage: require("../images/content-management/4.jpeg"),
+          backgroundImage: require("../images/content-management/news-2.jpg"),
           category: "Business",
           categoryTheme: "warning",
           author: "John James",
@@ -63,10 +67,11 @@ class Trainings extends React.Component {
           title: "It so numerous if he may outlived disposal",
           body:
             "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
-          date: "29 February 2019"
+          date: "29 February 2019",
+          eventDate: "28 Feb"
         },
         {
-            backgroundImage: require("../images/content-management/1.jpeg"),
+            backgroundImage: require("../images/content-management/news-1.jpg"),
             category: "Business",
             categoryTheme: "dark",
             author: "Anna Kunis",
@@ -74,10 +79,11 @@ class Trainings extends React.Component {
             title: "Conduct at an replied removal an amongst",
             body:
               "However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...",
-            date: "28 February 2019"
+            date: "28 February 2019",
+          eventDate: "28 Feb"
           },
           {
-            backgroundImage: require("../images/content-management/2.jpeg"),
+            backgroundImage: require("../images/content-management/news-2.jpg"),
             category: "Travel",
             categoryTheme: "info",
             author: "James Jamerson",
@@ -85,10 +91,11 @@ class Trainings extends React.Component {
             title: "Off tears are day blind smile alone had ready",
             body:
               "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+          eventDate: "28 Feb"
           },
           {
-            backgroundImage: require("../images/content-management/3.jpeg"),
+            backgroundImage: require("../images/content-management/news-1.jpg"),
             category: "Technology",
             categoryTheme: "royal-blue",
             author: "Jimmy Jackson",
@@ -96,10 +103,11 @@ class Trainings extends React.Component {
             title: "Difficult in delivered extensive at direction",
             body:
               "Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+          eventDate: "28 Feb"
           },
           {
-            backgroundImage: require("../images/content-management/4.jpeg"),
+            backgroundImage: require("../images/content-management/news-2.jpg"),
             category: "Business",
             categoryTheme: "warning",
             author: "John James",
@@ -107,7 +115,8 @@ class Trainings extends React.Component {
             title: "It so numerous if he may outlived disposal",
             body:
               "How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...",
-            date: "29 February 2019"
+            date: "29 February 2019",
+          eventDate: "28 Feb"
           }
       ]
     };
@@ -125,7 +134,7 @@ class Trainings extends React.Component {
         <Row noGutters className="page-header py-4">
           <PageTitle sm="4" title="Training events" subtitle="List of training events to add and edit" className="text-sm-left" />
           <div className="ml-auto">
-          <Button className="ml-sm-auto mb-2 " theme="primary">Add event +</Button>
+          <Link to={'/training-editor'}><Button className="ml-sm-auto mb-2 " theme="primary">Add event +</Button></Link>
           </div>
         </Row>
 
@@ -134,26 +143,13 @@ class Trainings extends React.Component {
           {PostsListOne.map((post, idx) => (
             <Col lg="3" md="6" sm="12" className="mb-4" key={idx}>
               <Card small className="card-post card-post--1">
-                <div
-                  className="card-post__image"
-                  style={{ backgroundImage: `url(${post.backgroundImage})` }}
-                >
-                  <Badge
+              <Badge
                     pill
-                    className={`card-post__category bg-${post.categoryTheme}`}
+                    className={`card-post__category bg-dark`}
                   >
-                    {post.category}
+                    {post.eventDate}
                   </Badge>
-                  <div className="card-post__author d-flex">
-                    <a
-                      href="#"
-                      className="card-post__author-avatar card-post__author-avatar--small"
-                      style={{ backgroundImage: `url('${post.authorAvatar}')` }}
-                    >
-                      Written by {post.author}
-                    </a>
-                  </div>
-                </div>
+                  <img src={post.backgroundImage} width="100%" height="auto"></img>
                 <CardBody>
                   <h5 className="card-title">
                     <a href="#" className="text-fiord-blue">
@@ -161,7 +157,10 @@ class Trainings extends React.Component {
                     </a>
                   </h5>
                   <p className="card-text d-inline-block mb-3">{post.body}</p>
-                  <span className="text-muted">{post.date}</span>
+                  <span className="text-muted">{post.date}</span><br />
+                  <a href="#"><img src={post.authorAvatar} width="20px" height="auto"></img> {post.author}</a>
+
+                 
                 </CardBody>
               </Card>
             </Col>
