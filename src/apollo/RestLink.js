@@ -8,7 +8,6 @@ export const AppRestLink = new RestLink({
   uri: Config.endpoint.base,
 
   responseTransformer: async response => {
-    console.log(response);
     return response.json()
       .then((response) => response.results.map((item) => ({
         ...item,
@@ -28,14 +27,9 @@ export const AppRestLink = new RestLink({
     formData: MultipartFormData
   },
   typePatcher: {
-    [APOLLO_TYPES.News]: (data, outerType, patchDeeper) => {
-      console.log('typePatcher: ', data);
-      console.log('outerType: ', outerType);
-
-      return {
-        ...data,
-        __typename: outerType
-      };
-    },
+    [APOLLO_TYPES.News]: (data, outerType, ) => ({
+      ...data,
+      __typename: outerType
+    }),
   }
 });
