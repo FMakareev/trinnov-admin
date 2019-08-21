@@ -134,6 +134,11 @@ export default [
     component: NewsEditor
   },
   {
+    path: "/news-editor/:id",
+    layout: DefaultLayout,
+    component: NewsEditor
+  },
+  {
     path: "/product-editor",
     layout: DefaultLayout,
     component: ProductEditor
