@@ -13,7 +13,7 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 // new views
-import News from "./views/News";
+import News from "./views/News/News";
 import Products from "./views/Products";
 import Trainings from "./views/Trainings";
 import Files from "./views/Files";
@@ -48,12 +48,12 @@ export default [
     component: BlogOverview
   },
   {
-    path: "/user-profile-lite", 
+    path: "/user-profile-lite",
     layout: DefaultLayout,
     component: UserProfileLite
   },
   {
-    path: "/add-new-post", 
+    path: "/add-new-post",
     layout: DefaultLayout,
     component: AddNewPost
   },
@@ -171,6 +171,6 @@ export default [
   {
     path: "/users-editor",
     layout: DefaultLayout,
-    component: UsersEditor    
+    component: UsersEditor
   }
 ];
