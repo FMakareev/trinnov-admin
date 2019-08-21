@@ -1,37 +1,31 @@
 import React from "react";
 import {
-    Container,
-    Row,
-    Col,
-    Card,
-    CardBody,
-    CardFooter,
-    Badge,
-    Button,
-    ButtonGroup,
-    ListGroup,
-    ListGroupItem,
-    CardHeader,
-    Form,
-    FormInput,
-    FormTextarea,
-    FormCheckbox} from "shards-react";
+  Card,
+  CardBody,
+  CardHeader,
+} from "shards-react";
+import ImageField from "../ImageField/ImageField";
+import {Field} from "react-final-form";
 
-import CustomFileUpload from "../components-overview/CustomFileUpload";
-
-const ArticleHeadImage = () => (
+const ArticleHeadImage = () => {
+  return (
     <Card small className="mb-4">
-        <CardHeader className="border-bottom">
-            <h6 className="m-0">Head image</h6>
-        </CardHeader>
-        <CardBody>
-            <Row noGutters><img width="100%" height="auto" src={require("../../images/content-management/head-image.png")} className="pb-2"></img> </Row>
-            <Row noGutters><CustomFileUpload /></Row>
-        </CardBody>
+      <CardHeader className="border-bottom">
+        <h6 className="m-0">Head image</h6>
+      </CardHeader>
+      <CardBody>
+        <Field
+          name={'head_image'}
+        >
+          {
+            (props)=>(
+              <ImageField {...props}/>)
+          }
+        </Field>
+      </CardBody>
     </Card>
-);
-
-
+  );
+}
 
 
 export default ArticleHeadImage;
