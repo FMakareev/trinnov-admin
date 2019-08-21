@@ -23,7 +23,6 @@ import PagesList from "./views/PagesList";
 import TeamMembers from "./views/TeamMembers";
 import Jobs from "./views/Jobs";
 import Users from "./views/Users";
-import NewsEditor from "./views/NewsEditor";
 import ProductEditor from "./views/ProductEditor";
 import TrainingEditor from "./views/TrainingEditor";
 import FileEditor from "./views/FileEditor";
@@ -33,6 +32,9 @@ import TeamMembersEditor from "./views/TeamMembersEditor";
 import Categories from "./views/Categories";
 import ProductCategoryEditor from "./views/ProductCategoryEditor";
 import UsersEditor from "./views/UsersEditor";
+
+
+const NewsEditor = React.lazy(() => import("./views/NewsEditor/NewsEditor"));
 
 export default [
   {
@@ -126,16 +128,19 @@ export default [
   {
     path: "/news",
     layout: DefaultLayout,
+    exact: true,
     component: News
   },
   {
     path: "/news-editor",
     layout: DefaultLayout,
+    exact: true,
     component: NewsEditor
   },
   {
-    path: "/news-editor/:id",
+    path: "/news-editor/:slug",
     layout: DefaultLayout,
+    exact: false,
     component: NewsEditor
   },
   {
