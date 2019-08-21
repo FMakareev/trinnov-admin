@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import {Badge, Card, CardBody, Col, Row} from "shards-react";
+import NewsDateFormat from "../../utils/NewsDateFormat";
 
 const NewsList = ({data}) => {
   return (
@@ -23,9 +24,9 @@ const NewsList = ({data}) => {
                 <p className="card-text d-inline-block mb-3">
                   {post.card_description}
                 </p>
-                <span className="text-muted">
-                    {post.created_at}
-                </span>
+                <div className="text-muted">
+                    {post.created_at && NewsDateFormat(post.created_at)}
+                </div>
                 <br/>
                 <a href="#">
                   <img
