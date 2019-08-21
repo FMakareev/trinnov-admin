@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import {Badge, Card, CardBody, Col, Row} from "shards-react";
 import NewsDateFormat from "../../utils/NewsDateFormat";
+import {Link} from "react-router-dom";
 
 const NewsList = ({data}) => {
   return (
@@ -17,9 +18,9 @@ const NewsList = ({data}) => {
               />
               <CardBody>
                 <h5 className="card-title">
-                  <a href="#" className="text-fiord-blue">
+                  <Link to={`/news-editor/${post.slug}`} href="#" className="text-fiord-blue">
                     {post.title}
-                  </a>
+                  </Link>
                 </h5>
                 <p className="card-text d-inline-block mb-3">
                   {post.card_description}
