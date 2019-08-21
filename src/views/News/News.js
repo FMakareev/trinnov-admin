@@ -18,7 +18,7 @@ import {usePagination} from "../../utils/usePagination";
 
 const NewsQuery = gql`
     query {
-        newsList @rest(type: "${APOLLO_TYPES.News}", path: "articles/"){
+        newsList @rest(type: "${APOLLO_TYPES.News}", path: "/articles/"){
             id
             card_description
             created_at
