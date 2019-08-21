@@ -1,29 +1,63 @@
 import React from "react";
-import ReactQuill from "react-quill";
-import { Card, CardBody, Form, FormInput,  Row, Col, CardHeader } from "shards-react";
+import {  Field } from 'react-final-form'
+
+import {
+  Card,
+  CardBody,
+  Row,
+  Col,
+  CardHeader
+} from "shards-react";
 
 import "react-quill/dist/quill.snow.css";
 import "../../assets/quill.css";
+import TextField from "../TextField/TextField";
+import BlockEditor from "../BlockEditor/BlockEditor";
 
-const ArticleEditor = () => (
-    
-    <Card small >
-        <CardHeader className="border-bottom">
-            <h6 className="m-0">Article editor</h6>
-        </CardHeader>
-        <CardBody>
-        <FormInput size="lg" className="mb-3" placeholder="Your Post Title" />
+const ArticleEditor = ({EditorRefInstance}) => {
+
+  return (
+
+    <Card small>
+      <CardHeader className="border-bottom">
+        <h6 className="m-0">Article editor</h6>
+      </CardHeader>
+      <CardBody>
+        <Field
+          name="title"
+          type="text"
+          placeholder="Your Post Title"
+        >
+          {
+            (props) => (<TextField size="lg" className="mb-3" {...props}/>)
+          }
+        </Field>
         <Row>
-        <Col md="12">
-            <Row >
-            <Col md="6"><FormInput placeholder="Date" className="mb-2"></FormInput> </Col>
-            <Col md="6"><FormInput placeholder="Slug" className="mb-2"></FormInput> </Col>
-            </Row>
-        </Col>
+          <Col md="12">
+            <Field
+              name="slug"
+              type="text"
+              placeholder="Slug"
+            >
+              {
+                (props) => (<TextField size="lg" className="mb-3" {...props}/>)
+              }
+            </Field>
+          </Col>
         </Row>
-        <ReactQuill className="add-new-post__editor mb-1" />
-        </CardBody>
+        <Field
+          name="content"
+          type="text"
+        >
+          {
+            (props) => (<BlockEditor
+              EditorRefInstance={EditorRefInstance}
+              {...props}/>)
+          }
+        </Field>
+      </CardBody>
     </Card>
-);
+  );
+}
 
 export default ArticleEditor;
