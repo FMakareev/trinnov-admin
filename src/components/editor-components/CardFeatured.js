@@ -1,44 +1,57 @@
 import React from "react";
 import {
-    Container,
-    Row,
-    Col,
-    Card,
-    CardBody,
-    CardFooter,
-    Badge,
-    Button,
-    ButtonGroup,
-    ListGroup,
-    ListGroupItem,
-    CardHeader,
-    Form,
-    FormInput,
-    FormTextarea,
-    FormCheckbox} from "shards-react";
+  Row,
+  Card,
+  CardBody,
+  ListGroup,
+  ListGroupItem,
+  CardHeader,
+} from "shards-react";
 
-import CustomFileUpload from "../components-overview/CustomFileUpload";
+import {Field} from "react-final-form";
+import CheckboxFinalForm from "../CheckboxFinalForm/CheckboxFinalForm";
+import ImageField from "../ImageField/ImageField";
 
 const CardFeatured = () => (
-    <Card small className="mb-4">
-        <CardHeader className="border-bottom">
-            <h6 className="m-0">Card featured</h6>
-        </CardHeader>
-        <CardBody>
-        <ListGroup flush>
-            <ListGroupItem className="p-0 px-3">
-                <FormCheckbox>Article is featured</FormCheckbox>
-                <Row noGutters><h6>Featured thumbnail</h6></Row>
-                <Row noGutters><img width="100%" height="auto" src={require("../../images/content-management/10.jpeg")} className="pb-2"></img> </Row>
-                <Row noGutters><CustomFileUpload /></Row>
-            </ListGroupItem>
-            
-        </ListGroup>
-        </CardBody>
-    </Card>
+  <Card small className="mb-4">
+    <CardHeader className="border-bottom">
+      <h6 className="m-0">Card featured</h6>
+    </CardHeader>
+    <CardBody>
+      <ListGroup flush>
+        <ListGroupItem className="p-0 px-3">
+          <Field
+            name="is_featured"
+            type="checkbox"
+          >
+            {
+              (props) => {
+                return (
+                  <CheckboxFinalForm label={'Article is featured'} {...props}/>)
+              }
+            }
+          </Field>
+          <Row noGutters>
+            <h6>
+              Featured thumbnail
+            </h6>
+          </Row>
+
+          <Field
+            name={'thumbnail_featured'}
+          >
+            {
+              (props) => (
+                <ImageField {...props}/>)
+            }
+          </Field>
+
+        </ListGroupItem>
+
+      </ListGroup>
+    </CardBody>
+  </Card>
 );
-
-
 
 
 export default CardFeatured;
