@@ -1,5 +1,5 @@
 import React from "react";
-import {  Field } from 'react-final-form'
+import {Field} from 'react-final-form'
 
 import {
   Card,
@@ -13,6 +13,8 @@ import "react-quill/dist/quill.snow.css";
 import "../../assets/quill.css";
 import TextField from "../TextField/TextField";
 import BlockEditor from "../BlockEditor/BlockEditor";
+
+
 
 const ArticleEditor = ({EditorRefInstance}) => {
 

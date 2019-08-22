@@ -21,6 +21,8 @@ import ArticleEditor from "../../components/editor-components/ArticleEditor";
 import NewsEditorFormEnhancer from "./NewsEditorFormEnhancer";
 
 
+
+
 const NewsValidator = async (values) => {
   const errors = {};
   if (!values.title) {
@@ -49,7 +51,6 @@ const NewsValidator = async (values) => {
     errors.card_description = 'Required'
   }
 
-
   return errors;
 };
 
@@ -65,6 +66,15 @@ const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
       let savedData = {};
       if (EditorRefInstance.EditorRefInstance) {
         savedData = await EditorRefInstance.EditorRefInstance.save();
+        if (savedData.blocks && !savedData.blocks.length) {
+          return {
+            content: 'Required'
+          }
+        }
+      } else {
+        return {
+          content: 'Editor not initializing'
+        }
       }
       return onPublish({
         ...values,
@@ -73,7 +83,7 @@ const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
     }}
     initialValues={initialValues}
     validate={NewsValidator}
-    render={({handleSubmit,submitError, ...rest}) => {
+    render={({handleSubmit}) => {
 
       return (
         <form onSubmit={(event) => {
