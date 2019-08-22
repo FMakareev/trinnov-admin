@@ -2,6 +2,7 @@
 
 import React from "react";
 import {Form} from 'react-final-form'
+import createDecorator from 'final-form-focus'
 
 import {
   Container,
@@ -22,6 +23,7 @@ import NewsEditorFormEnhancer from "./NewsEditorFormEnhancer";
 
 
 
+const focusOnError = createDecorator()
 
 const NewsValidator = async (values) => {
   const errors = {};
@@ -81,8 +83,9 @@ const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
         content: savedData,
       })
     }}
+    decorators={[focusOnError]}
     initialValues={initialValues}
-    validate={NewsValidator}
+    // validate={NewsValidator}
     render={({handleSubmit}) => {
 
       return (

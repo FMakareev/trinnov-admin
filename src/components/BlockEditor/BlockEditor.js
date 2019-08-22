@@ -27,11 +27,24 @@ const BlockEditor = ({input, meta: {touched, error, submitError}, EditorRefInsta
     <div
       className={"form-control"}
       style={{
-      padding: '.4375rem .75rem .4375rem 1.5rem'
-    }}>
-      <div style={{display: 'none'}} className={classNames("form-control", {
-        "is-invalid": true,
-      })}>
+        position: 'relative',
+        padding: '.4375rem .75rem .4375rem 1.5rem'
+      }}>
+      {/* this is for auto focus submitError */}
+      <input
+        {...input}
+        style={{
+          position: 'absolute',
+          opacity: 0,
+        }}
+        type="text"
+      />
+      <div
+        style={{display: 'none'}}
+        className={classNames("form-control", {
+          "is-invalid": true,
+        })}
+      >
       </div>
       {
         touched && (error || submitError) &&
