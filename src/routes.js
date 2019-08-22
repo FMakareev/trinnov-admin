@@ -26,7 +26,6 @@ import Users from "./views/Users";
 import ProductEditor from "./views/ProductEditor";
 import TrainingEditor from "./views/TrainingEditor";
 import FileEditor from "./views/FileEditor";
-import { join } from "path";
 import JobsEditor from "./views/JobsEditor";
 import TeamMembersEditor from "./views/TeamMembersEditor";
 import Categories from "./views/Categories";
