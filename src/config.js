@@ -1,7 +1,6 @@
-
 export const Config = {
   endpoint: {
-    base: '/api'
+    base: window.location.hostname === 'localhost' ? 'http://trinnov-admin.avenirdigital.eu/api' : '/api',
   },
   allowedFileExtensions: [
     'image/jpeg',
