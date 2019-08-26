@@ -2,7 +2,10 @@ import React from "react";
 import classNames from 'classnames';
 import {Config} from "../../config";
 
-const CustomFileUpload = ({onChange, meta: {touched, error, submitError}}) => {
+const CustomFileUpload = ({onChange, meta = {}}) => {
+
+  const {touched, error, submitError} = meta;
+
   return (
     <div className="custom-file mb-3">
       <input
