@@ -7,25 +7,31 @@ import {
 import ImageField from "../ImageField/ImageField";
 import {Field} from "react-final-form";
 
-const ArticleHeadImage = () => {
+const ArticleHeadImage = ({
+                            name = 'head_image',
+                            title = 'Head image'
+
+                          }) => {
   return (
     <Card small className="mb-4">
       <CardHeader className="border-bottom">
-        <h6 className="m-0">Head image</h6>
+        <h6 className="m-0">
+          {title}
+        </h6>
       </CardHeader>
       <CardBody>
         <Field
-          name={'head_image'}
+          name={name}
         >
           {
-            (props)=>(
+            (props) => (
               <ImageField {...props}/>)
           }
         </Field>
       </CardBody>
     </Card>
   );
-}
+};
 
 
 export default ArticleHeadImage;
