@@ -41,10 +41,9 @@
  */
 
 // eslint-disable-next-line
-import css from './index.css';
 import Ui from './ui';
 import Tunes from './tunes';
-import ToolboxIcon from './svg/toolbox.svg';
+import {ToolboxIcon} from './icon';
 import Uploader from './uploader';
 
 /**

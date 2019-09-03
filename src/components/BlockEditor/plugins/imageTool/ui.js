@@ -1,4 +1,4 @@
-import buttonIcon from './svg/button-icon.svg';
+import {buttonIcon} from './icon';
 
 /**
  * Class for working with UI:
