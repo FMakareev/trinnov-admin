@@ -43,6 +43,7 @@ export default class Uploader {
     // custom uploading
     if (this.config.uploader && typeof this.config.uploader.uploadByFile === 'function') {
       upload = ajax.selectFiles().then((files) => {
+        console.log(files);
         preparePreview(files[0]);
 
         const customUpload = this.config.uploader.uploadByFile(files[0]);
@@ -56,6 +57,7 @@ export default class Uploader {
 
       // default uploading
     } else {
+      console.log('default uploading');
       upload = ajax.transport({
         url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
@@ -67,14 +69,24 @@ export default class Uploader {
         fieldName: this.config.field
       }).then((response) =>
       {
+        console.log(response);
         return response.body;
       });
     }
 
     upload.then((response) => {
+      console.log(response);
       this.onUpload(response);
     }).catch((error) => {
-      this.onError(error);
+      console.log(error);
+      if(error.code === 201) {
+        this.onUpload({
+          ...error.body,
+          success: true,
+        });
+      } else  {
+        this.onError(error);
+      }
     });
   }
 
@@ -129,6 +141,9 @@ export default class Uploader {
      */
     const reader = new FileReader();
 
+    console.log(file);
+    console.log(onPreview);
+
     reader.readAsDataURL(file);
     reader.onload = (e) => {
       onPreview(e.target.result);
@@ -164,12 +179,17 @@ export default class Uploader {
         data: formData,
         type: ajax.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then(response => response.body);
+      }).then(response => {
+        console.log(response);
+        return response.body;
+      });
     }
 
     upload.then((response) => {
+      console.log(response);
       this.onUpload(response);
     }).catch((error) => {
+      console.log(error);
       this.onError(error);
     });
   }

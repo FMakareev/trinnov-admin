@@ -118,7 +118,10 @@ export default class ImageTool {
     this.uploader = new Uploader({
       config: this.config,
       onUpload: (response) => this.onUpload(response),
-      onError: (error) => this.uploadingFailed(error)
+      onError: (error) => {
+        console.log(error);
+        return this.uploadingFailed(error);
+      }
     });
 
     /**
@@ -328,6 +331,7 @@ export default class ImageTool {
    * @param {UploadResponseFormat} response
    */
   onUpload(response) {
+    console.log('onUpload: ', response);
     if (response.success && response.file) {
       this.image = response.file;
     } else {
