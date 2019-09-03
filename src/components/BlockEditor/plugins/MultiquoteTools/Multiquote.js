@@ -1,5 +1,5 @@
 import {IconQuote} from "./iconQuote";
-
+import './style.css'
 
 export class MultiquoteTools {
 
