@@ -1,45 +1,13 @@
-<p align="center">
-<a href="https://designrevision.com/downloads/shards-dashboard-lite-react/">
-<img src="assets/preview.png" width="250" />
-</a>
-</p>
+### Editor.js
 
-<h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;"><a href="https://designrevision.com/downloads/shards-dashboard-lite-react/">Shards Dashboard React</a></h1>
-<p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" />
-  </a>
-  <a href="https://twitter.com/designrevision">
-    <img src="https://img.shields.io/twitter/follow/DesignRevision.svg?style=social&label=Follow" />
-  </a>
-</p>
-
-<p align="center">
-A free React admin dashboard template pack featuring a modern design system <br />  and lots of custom templates and components.
-</p>
-
-<p align="center">
-  <a href="https://designrevision.com/demo/shards-dashboard-lite-react">
-    <img height="55px" src="assets/btn-live-preview.png" />
-  </a>
-  <a href="https://designrevision.com/downloads/shards-dashboard-lite-react">
-    <img height="55px" src="assets/btn-learn-more.png" />
-  </a>
-</p>
-
-<br />
-
-<p align="center">
-<a href="https://designrevision.com/downloads/shards-dashboard-lite-react">
-<img src="assets/demo-preview.gif" width="650" />
-</a>
-</p>
-
-<br />
-
-> ✨ **Note:** You can download the Sketch files from the official product page.
-
-<br />
+* клонируем репозиторий https://github.com/Jungwoo-An/react-editor-js
+* ставим пакеты yarn
+* собираем проект yarn build
+* в корне директории с react-editor-js выполняем yarn link
+* в корне директории админки выполняем yarn link "react-editor-js"
+* далее работаем как обычно.
+ 
+ 
 
 ### Quick Start
 
