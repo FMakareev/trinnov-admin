@@ -2,7 +2,6 @@
  * Build styles
  */
 import './index.css';
-import Shortcut from '@codexteam/shortcuts'
 
 /**
  * @typedef {object} ListData
