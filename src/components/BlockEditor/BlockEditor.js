@@ -68,7 +68,8 @@ const tools = {
     }
   },
   multiquote: MultiquoteTools,
-  intro: {
+  paragraph:Paragraph,
+  introText: {
     class: Paragraph,
     config: {
       placeholder: 'Enter text',
@@ -93,8 +94,6 @@ const tools = {
     class: ImageTool,
     config: {
       endpoints: {
-        // byFile: '/editor/transport',
-        // byUrl: '/editor/transport',
         byFile: '/api/gallery/',
         byUrl: '/api/gallery/',
       }
