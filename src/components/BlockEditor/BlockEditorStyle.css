@@ -7,3 +7,28 @@
 .cdx-block.cdx-quote .cdx-button{
   margin-bottom: 10px;
 }
+.ce-toolbox {
+  flex-wrap: wrap;
+}
+
+.ce-toolbox__tooltip {
+  z-index: 10;
+}
+
+.ce-paragraph[data-placeholder]:empty::before {
+  opacity: 1 !important;
+}
+
+
+.cdx-button--image-remove {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.image-tool.image-tool--filled:hover + .cdx-button--image-remove,
+.cdx-button--image-remove:hover {
+  display: block;
+}
