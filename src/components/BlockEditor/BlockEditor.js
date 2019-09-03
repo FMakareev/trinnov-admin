@@ -12,9 +12,8 @@ import GridTextBlock from "./plugins/gridTextBlock";
 import {TextWithTitle} from "./plugins/textWithTitle";
 import {TitleWithLogoWithText} from "./plugins/titleWithLogoWithText";
 import {TitleWithTextWithLogo} from "./plugins/titleWithTextWithLogo";
-import {TitleWithList} from "./plugins/titleWithList";
-import {List} from "./plugins/list";
 import {TitleWithTextWithGallery} from "./plugins/titleWithTextWithGallery";
+import {ListToolWithText} from "./plugins/listToolWithText";
 
 
 const initData = (value) => {
@@ -40,7 +39,7 @@ const tools = {
   titleWithText: TextWithTitle,
   titleWithLogoWithText: TitleWithLogoWithText,
   titleWithTextWithLogo: TitleWithTextWithLogo,
-  // titleWithList: TitleWithList,
+  titleWithList: ListToolWithText,
   TitleWithTextWithGallery: TitleWithTextWithGallery,
   gridTextBlock: {
     class: GridTextBlock,
