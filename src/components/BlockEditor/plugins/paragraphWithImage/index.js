@@ -41,6 +41,7 @@ export class ParagraphWithImage {
         }
       }
     });
+
   }
 
 
@@ -60,11 +61,11 @@ export class ParagraphWithImage {
     Wrapper.appendChild(ColRight);
 
 
-try{
-  this.Image.ui.customRender({file:{}})
-} catch (e) {
-  console.log(e);
-}
+    try {
+      this.Image.ui.customRender({file: {}})
+    } catch (e) {
+      console.log(e);
+    }
 
     return Wrapper;
   }
