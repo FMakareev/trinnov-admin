@@ -112,12 +112,12 @@ const BlockEditor = ({input, meta: {touched, error, submitError}, EditorRefInsta
         padding: '.4375rem .75rem .4375rem 1.5rem'
       }}>
 
-      <button type={'button'} onClick={async () => {
-        const data = await EditorRefInstance.EditorRefInstance.save();
-        console.log(JSON.stringify(data));
-      }}>
-        save
-      </button>
+      {/*<button type={'button'} onClick={async () => {*/}
+      {/*  const data = await EditorRefInstance.EditorRefInstance.save();*/}
+      {/*  console.log(JSON.stringify(data));*/}
+      {/*}}>*/}
+      {/*  save*/}
+      {/*</button>*/}
       {/* this is for auto focus submitError */}
       <input
         {...input}
