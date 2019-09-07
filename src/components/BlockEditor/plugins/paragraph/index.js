@@ -54,6 +54,7 @@ export class Paragraph {
     this.api = api;
     this.publicSave = this.publicSave.bind(this);
 
+
     this._CSS = {
       block: this.api.styles.block,
       wrapper: [
@@ -72,6 +73,24 @@ export class Paragraph {
     this._element = this.drawView();
 
     this.data = data;
+
+    this.api.listeners.on(this._element, 'paste',(event)=>{
+      navigator.clipboard.readText()
+        .then(text => {
+          console.log('Pasted content: ', text);
+          this.onPaste({
+            detail: {
+              data: {
+                innerHTML: text,
+              }
+            }
+          });
+        })
+        .catch(err => {
+          console.error('Failed to read clipboard contents: ', err);
+        });
+
+    })
   }
 
   /**
@@ -180,8 +199,16 @@ export class Paragraph {
    * @param {PasteEvent} event - event with pasted data
    */
   onPaste(event) {
+    console.log('onPaste: ',event.detail.data.innerHTML);
     const data = {
-      text: event.detail.data.innerHTML
+      text: this.api.sanitizer.clean(event.detail.data.innerHTML,{
+        br: true,
+        strong: false, // leave <b> without any attributes
+        i: false, // leave <b> without any attributes
+        b: false, // leave <b> without any attributes
+        p: true, // leave <p> as is
+        a: false
+      })
     };
 
     this.data = data;
@@ -201,11 +228,23 @@ export class Paragraph {
    * Sanitizer rules
    */
   static get sanitize() {
-    return {
+
+    return{
       text: {
         br: true,
-      }
-    };
+        strong: false,
+        i: false,
+        b: false,
+        p: true,
+        a: false
+      },
+      br: true,
+      strong: false,
+      i: false,
+      b: false,
+      p: true,
+      a: false
+    }
   }
 
   /**
@@ -231,7 +270,7 @@ export class Paragraph {
    */
   set data(data) {
     this._data = data || {};
-
+    console.log(data);
     this._element.innerHTML = this._data.text || '';
   }
 
@@ -243,7 +282,7 @@ export class Paragraph {
    */
   static get pasteConfig() {
     return {
-      tags: ['P']
+      tags: ['P','div',' ']
     };
   }
 }
