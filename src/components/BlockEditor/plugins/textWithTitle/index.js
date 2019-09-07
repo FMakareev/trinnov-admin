@@ -42,6 +42,12 @@ export class TextWithTitle {
     return this._data;
   }
 
+  openToolbar() {
+    this.api.toolbar.open();
+
+    // then do something else
+  }
+
   createLayout() {
     this.view.wrapper = CreateDOMElement({
       tagName: 'div'
@@ -74,6 +80,12 @@ export class TextWithTitle {
       config: {
         placeholder: 'Enter text'
       }
+    });
+
+    this.view.text._element.addEventListener('click',()=>{
+      console.log(this.view.text);
+      this.view.text.api.toolbar.open();
+      // this.view.text.api.inlineToolbar.open();
     });
 
     this.view.wrapper.appendChild(this.view.header._element);

@@ -32,3 +32,21 @@
 .cdx-button--image-remove:hover {
   display: block;
 }
+
+.image-tool__image-picture {
+  max-width: 100%;
+}
+
+.ce-conversion-tool[data-tool="titleWithList"],
+.ce-conversion-tool[data-tool="list"],
+.ce-conversion-tool[data-tool="introText"],
+.ce-conversion-tool[data-tool="paragraph"]
+{
+  display: none;
+}
+
+
+.cdx-notifies {
+  left: 50%;
+  transform: translateX(-50%);
+}

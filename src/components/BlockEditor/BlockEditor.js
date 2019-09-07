@@ -2,6 +2,7 @@ import React from 'react';
 import ReactEditorJs from 'react-editor-js';
 import classNames from "classnames";
 import './BlockEditorStyle.css';
+import listTool from '@editorjs/list'
 import Paragraph from "./plugins/paragraph";
 import {MultiquoteTools} from "./plugins/MultiquoteTools/Multiquote";
 import ImageTool from "./plugins/imageTool";
@@ -14,7 +15,6 @@ import {TitleWithLogoWithText} from "./plugins/titleWithLogoWithText";
 import {TitleWithTextWithLogo} from "./plugins/titleWithTextWithLogo";
 import {TitleWithTextWithGallery} from "./plugins/titleWithTextWithGallery";
 import {ListToolWithText} from "./plugins/listToolWithText";
-
 
 const initData = (value) => {
   if (typeof value === 'string' && value.length > 0) {
@@ -36,19 +36,40 @@ const initData = (value) => {
 };
 
 const tools = {
-  titleWithText: TextWithTitle,
-  titleWithLogoWithText: TitleWithLogoWithText,
-  titleWithTextWithLogo: TitleWithTextWithLogo,
-  titleWithList: ListToolWithText,
-  TitleWithTextWithGallery: TitleWithTextWithGallery,
+  list: {
+    class:listTool,
+    inlineToolbar: true,
+  },
+  titleWithText: {
+    class: TextWithTitle,
+    inlineToolbar: true,
+  },
+  titleWithLogoWithText: {
+    class: TitleWithLogoWithText,
+    inlineToolbar: true,
+  },
+  titleWithTextWithLogo: {
+    class: TitleWithTextWithLogo,
+    inlineToolbar: true,
+  },
+  titleWithList: {
+    class: ListToolWithText,
+    inlineToolbar: true,
+  },
+  TitleWithTextWithGallery: {
+    class: TitleWithTextWithGallery,
+    inlineToolbar: true,
+  },
   gridTextBlock: {
     class: GridTextBlock,
+    inlineToolbar: true,
     config: {
       col: 2,
     }
   },
   tabsEmbed: {
     class: TabsEmbed,
+    inlineToolbar: true,
     config: {
       col: 2,
       services: {
@@ -59,6 +80,7 @@ const tools = {
   },
   paragraphWithImage: {
     class: ParagraphWithImage,
+    inlineToolbar: true,
     config: {
       imageCaption: false,
       endpoints: {
@@ -67,22 +89,27 @@ const tools = {
       }
     }
   },
-  multiquote: MultiquoteTools,
-  paragraph:Paragraph,
+  multiquote: {
+    class: MultiquoteTools,
+    inlineToolbar: true,
+  },
+  paragraph:{
+    class: Paragraph,
+    inlineToolbar: true,
+  },
   introText: {
     class: Paragraph,
+    inlineToolbar: true,
     config: {
       placeholder: 'Enter text',
       css: {
         wrapper: ['intro_text']
       },
     },
-    inlineToolbar: true,
   },
   embed: {
     class: EmbedVideoTool,
     inlineToolbar: true,
-
     config: {
       services: {
         youtube: true,

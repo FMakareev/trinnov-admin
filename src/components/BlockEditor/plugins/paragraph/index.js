@@ -20,6 +20,11 @@ import {IconParagraph} from "./IconParagraph";
  * @property {String} text — Paragraph's content. Can include HTML tags: <a><b><i>
  */
 export class Paragraph {
+  // static get isInline() {
+  //   return false;
+  // }
+
+
   /**
    * Default placeholder for Paragraph Tool
    *

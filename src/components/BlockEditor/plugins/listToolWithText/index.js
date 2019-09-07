@@ -14,6 +14,13 @@ import Header from "@editorjs/header";
  * List Tool for the Editor.js 2.0
  */
 export class ListToolWithText {
+
+  static get isInline() {
+    console.log('isInline');
+    return false;
+  }
+
+
   /**
    * Allow to use native Enter behaviour
    * @returns {boolean}

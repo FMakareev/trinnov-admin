@@ -8,6 +8,7 @@
     "@apollo/react-hoc": "^3.0.1",
     "@apollo/react-hooks": "^3.0.1",
     "@codexteam/ajax": "^4.1.0",
+    "@editorjs/list": "^1.4.0",
     "apollo-boost": "^0.4.4",
     "apollo-link": "^1.2.12",
     "apollo-link-rest": "^0.7.3",
