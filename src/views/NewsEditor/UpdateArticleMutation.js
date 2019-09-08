@@ -15,6 +15,7 @@ export const UpdateArticleMutation = gql`
         $is_featured: String,
         $thumbnail_featured: String,
         $with_video: String,
+        $method: String,
     ) {
         createArticles(input: {
             id: $id
@@ -29,11 +30,11 @@ export const UpdateArticleMutation = gql`
             is_featured: $is_featured
             thumbnail_featured: $thumbnail_featured
             with_video: $with_video
-        })
+        },slug: $slug)
         @rest(
             type: "${APOLLO_TYPES.News}",
-            path: "/articles/",
-            method: "POST"
+            path: "/articles/{args.slug}/",
+            method: $method
             bodySerializer: "formData"
         ) {
             id
