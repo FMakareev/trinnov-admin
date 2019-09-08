@@ -16,7 +16,6 @@ import Header from "@editorjs/header";
 export class ListToolWithText {
 
   static get isInline() {
-    console.log('isInline');
     return false;
   }
 
