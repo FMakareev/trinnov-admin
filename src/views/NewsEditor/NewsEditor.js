@@ -137,7 +137,7 @@ const NewsEditor = ({onPublish, onDelete, loading, initialValues, EditorRefInsta
                   </Button>
                 }
                 <Field
-                  className="mr-2"
+                  className={values && values.id && "mr-2"}
                   name={'is_published'}
                 >
                   {
