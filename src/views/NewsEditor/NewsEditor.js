@@ -1,7 +1,7 @@
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 
 import React from "react";
-import {Form} from 'react-final-form'
+import {Field, Form} from 'react-final-form'
 import createDecorator from 'final-form-focus'
 
 import {
@@ -20,7 +20,7 @@ import ArticleHeadImage
 
 import ArticleEditor from "../../components/editor-components/ArticleEditor";
 import NewsEditorFormEnhancer from "./NewsEditorFormEnhancer";
-
+import PublishButton from "../../components/PublishButton/PublishButton";
 
 
 const focusOnError = createDecorator()
@@ -57,12 +57,17 @@ const NewsValidator = async (values) => {
 };
 
 
-const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
+const NewsEditor = ({onPublish, onDelete, loading, initialValues, EditorRefInstance}) => {
   if (loading) {
     return (<div>
       Loading ...
     </div>)
   }
+  /**
+   * is_published = false - Publish
+   * is_published = true - Unpublish + update
+   *
+   * */
   return (<Form
     onSubmit={async (values) => {
       let savedData = {};
@@ -84,9 +89,13 @@ const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
       })
     }}
     decorators={[focusOnError]}
-    initialValues={initialValues}
-    // validate={NewsValidator}
-    render={({handleSubmit}) => {
+    initialValues={{
+      is_published: false,
+      ...initialValues,
+    }}
+
+    validate={NewsValidator}
+    render={({handleSubmit, values}) => {
 
       return (
         <form onSubmit={(event) => {
@@ -102,13 +111,58 @@ const NewsEditor = ({onPublish, loading, initialValues, EditorRefInstance}) => {
                 className="text-sm-left"
               />
               <div className="ml-auto">
-                <Button outline theme="accent" size="sm" className="mr-2">
-                  <i className="material-icons">save</i> Save Draft
-                </Button>
-                <Button type={'submit'} theme="accent" size="sm"
-                        className="ml-auto">
-                  <i className="material-icons">file_copy</i> Publish
-                </Button>
+
+                {
+                  values && !values.id &&
+                  <Button
+                    onClick={() => {
+                      void handleSubmit({is_published: false, values})
+                    }}
+                    type={'button'}
+                    outline
+                    theme="accent"
+                    size="sm"
+                    className="mr-2">
+                    <i className="material-icons">save</i> Save Draft
+                  </Button>
+                }
+                {
+                  values && values.id &&
+                  <Button
+                    onClick={() => {
+                      void handleSubmit(values)
+                    }}
+                    outline theme="accent" size="sm" className="mr-2">
+                    <i className="material-icons">save</i> Update
+                  </Button>
+                }
+                <Field
+                  className="mr-2"
+                  name={'is_published'}
+                >
+                  {
+                    (props) => (<PublishButton
+                      onClick={(is_published) => {
+                        void handleSubmit({...values, is_published})
+                      }} {...props}/>)
+                  }
+                </Field>
+                {
+                  values && values.id &&
+                  <Button
+                    onClick={() => {
+                      if(window.confirm('are you sure you want to delete this article?')){
+                        onDelete(values);
+                      }
+                    }}
+                    type={'button'}
+                    outline
+                    theme="danger"
+                    size="sm"
+                   >
+                    <i className="material-icons">delete</i> Delete
+                  </Button>
+                }
               </div>
             </Row>
             <Row className="mb-4">
