@@ -7,6 +7,9 @@ import {MultipartFormData} from "./bodySerializers/MultipartFormData";
 export const AppRestLink = new RestLink({
   uri: Config.endpoint.base,
   responseTransformer: async (response, outerType) => {
+    if(!response.json){
+      return null;
+    }
     return response.json()
       .then((response) => {
         if (Array.isArray(response.results)) {
