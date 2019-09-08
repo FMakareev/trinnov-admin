@@ -1,14 +1,15 @@
 import React from 'react';
 import {Button} from "shards-react";
+import classnames from "classnames";
 
-export const PublishButton = ({input,onClick}) => {
+export const PublishButton = ({input,onClick,className}) => {
   if (input.value) {
     return (
       <Button
         type={'button'}
         theme="accent"
         size="sm"
-        className="ml-auto"
+        className={classnames('ml-auto', className)}
         onClick={() => {
           input.onChange(false);
           onClick(false);
@@ -26,7 +27,7 @@ export const PublishButton = ({input,onClick}) => {
         type={'button'}
         theme="accent"
         size="sm"
-        className="ml-auto"
+        className={classnames('ml-auto', className)}
         onClick={() => {
           input.onChange(true);
           onClick(true);
