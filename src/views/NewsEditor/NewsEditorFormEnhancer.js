@@ -79,14 +79,21 @@ const NewsEditorFormEnhancer = (WrapperComponent) =>
 
       if (typeof newValues.og_thumbnail !== 'string') {
         newValues.og_thumbnail = newValues.og_thumbnail && newValues.og_thumbnail.file;
+      } else {
+        delete newValues.og_thumbnail;
       }
+
 
       if (typeof newValues.thumbnail !== 'string') {
         newValues.thumbnail = newValues.thumbnail && newValues.thumbnail.file;
+      } else {
+        delete newValues.thumbnail;
       }
 
       if (typeof newValues.thumbnail_featured !== 'string') {
         newValues.thumbnail_featured = newValues.thumbnail_featured && newValues.thumbnail_featured.file;
+      } else {
+        delete newValues.thumbnail_featured;
       }
 
       if (newValues.content) {
@@ -97,7 +104,7 @@ const NewsEditorFormEnhancer = (WrapperComponent) =>
       }
       if (newValues.slug !== null) {
         newValues.slug = newValues.slug.trim()
-          .replace(/[@:%._\+~#=,]/g,'')
+          .replace(/[@:%._\+~#=,]/g, '')
           .replace(/ /g, '-');
       }
       return newValues;
@@ -127,7 +134,7 @@ const NewsEditorFormEnhancer = (WrapperComponent) =>
         const result = await this.props.UpdateArticles({
           variables: {
             ...newValues,
-            method: 'PUT'
+            method: 'PATCH'
           }
         })
           .catch((error) => {
@@ -208,21 +215,15 @@ const NewsEditorFormEnhancer = (WrapperComponent) =>
 export default NewsEditorFormEnhancer;
 
 
-
-
-
-
-
-
 const t = {
 
   filter: [
     {
-      name:'Select seasons',
+      name: 'Select seasons',
       type: 'text',
     },
     {
-      name:'Weight category',
+      name: 'Weight category',
       type: 'text',
       dependOn: 'Select seasons'
     },
